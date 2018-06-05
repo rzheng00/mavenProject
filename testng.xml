@@ -14,9 +14,9 @@
 			 </classes>
 	 </test>
 	 
-	 <!-- 
+	 <!--
 	 <test name="2nd batch test">
-	 	
+	 	test
 	 	<parameter name="browserType" value="chrome"/>
 	 		<classes>
 	 			<class name= "test.rsTest" />
