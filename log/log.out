@@ -1,0 +1,184 @@
+[1527671950.718][INFO]: COMMAND InitSession {
+   "capabilities": {
+      "desiredCapabilities": {
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [ "incognito" ],
+            "extensions": [  ]
+         }
+      },
+      "firstMatch": [ {
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [ "incognito" ],
+            "extensions": [  ]
+         }
+      } ]
+   },
+   "desiredCapabilities": {
+      "browserName": "chrome",
+      "goog:chromeOptions": {
+         "args": [ "incognito" ],
+         "extensions": [  ]
+      }
+   }
+}
+[1527671950.720][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_setting_values": {
+         "geolocation": 1
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 1,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[1527671950.720][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[1527671950.723][INFO]: Launching chrome: /Applications/Google Chrome.app/Contents/MacOS/Google Chrome --disable-background-networking --disable-client-side-phishing-detection --disable-default-apps --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --disable-web-resources --enable-automation --enable-logging --force-fieldtrials=SiteIsolationExtensions/Control --ignore-certificate-errors --incognito --load-extension=/var/folders/br/3j2sqg6s2q9g2q_tdy399zxc0000gp/T/.org.chromium.Chromium.YucBgI/internal --log-level=0 --metrics-recording-only --no-first-run --password-store=basic --remote-debugging-port=12045 --test-type=webdriver --use-mock-keychain --user-data-dir=/var/folders/br/3j2sqg6s2q9g2q_tdy399zxc0000gp/T/.org.chromium.Chromium.8caVDf data:,
+[1527671951.136][INFO]: resolved localhost to ["::1","fe80::1","127.0.0.1"]
+[1527671951.235][INFO]: RESPONSE InitSession {
+   "acceptInsecureCerts": false,
+   "acceptSslCerts": false,
+   "applicationCacheEnabled": false,
+   "browserConnectionEnabled": false,
+   "browserName": "chrome",
+   "chrome": {
+      "chromedriverVersion": "2.38.552518 (183d19265345f54ce39cbb94cf81ba5f15905011)",
+      "userDataDir": "/var/folders/br/3j2sqg6s2q9g2q_tdy399zxc0000gp/T/.org.chromium.Chromium.8caVDf"
+   },
+   "cssSelectorsEnabled": true,
+   "databaseEnabled": false,
+   "handlesAlerts": true,
+   "hasTouchScreen": false,
+   "javascriptEnabled": true,
+   "locationContextEnabled": true,
+   "mobileEmulationEnabled": false,
+   "nativeEvents": true,
+   "networkConnectionEnabled": false,
+   "pageLoadStrategy": "normal",
+   "platform": "Mac OS X",
+   "rotatable": false,
+   "setWindowRect": true,
+   "~~~": "..."
+}
+[1527671951.301][INFO]: COMMAND MaximizeWindow {
+   "handle": "current",
+   "windowHandle": "current"
+}
+[1527671951.302][INFO]: resolved localhost to ["::1","fe80::1","127.0.0.1"]
+[1527671951.511][INFO]: RESPONSE MaximizeWindow
+[1527671951.527][INFO]: COMMAND Navigate {
+   "url": "http://the-internet.herokuapp.com/abtest"
+}
+[1527671951.527][INFO]: Waiting for pending navigations...
+[1527671951.528][INFO]: Done waiting for pending navigations. Status: ok
+[1527671951.953][INFO]: Waiting for pending navigations...
+[1527671952.452][INFO]: Done waiting for pending navigations. Status: ok
+[1527671952.452][INFO]: RESPONSE Navigate
+[1527671952.459][INFO]: COMMAND FindElement {
+   "using": "xpath",
+   "value": "*/body/div[2]/a/img"
+}
+[1527671952.459][INFO]: Waiting for pending navigations...
+[1527671952.460][INFO]: Done waiting for pending navigations. Status: ok
+[1527671952.473][INFO]: Waiting for pending navigations...
+[1527671952.473][INFO]: Done waiting for pending navigations. Status: ok
+[1527671952.473][INFO]: RESPONSE FindElement {
+   "ELEMENT": "0.38509875815403727-1"
+}
+[1527671952.478][INFO]: COMMAND IsElementDisplayed {
+   "id": "0.38509875815403727-1"
+}
+[1527671952.478][INFO]: Waiting for pending navigations...
+[1527671952.479][INFO]: Done waiting for pending navigations. Status: ok
+[1527671952.492][INFO]: Waiting for pending navigations...
+[1527671952.492][INFO]: Done waiting for pending navigations. Status: ok
+[1527671952.492][INFO]: RESPONSE IsElementDisplayed true
+[1527671952.498][INFO]: COMMAND FindElement {
+   "using": "xpath",
+   "value": "*/body/div[2]/a/img"
+}
+[1527671952.498][INFO]: Waiting for pending navigations...
+[1527671952.499][INFO]: Done waiting for pending navigations. Status: ok
+[1527671952.506][INFO]: Waiting for pending navigations...
+[1527671952.507][INFO]: Done waiting for pending navigations. Status: ok
+[1527671952.507][INFO]: RESPONSE FindElement {
+   "ELEMENT": "0.38509875815403727-1"
+}
+[1527671952.511][INFO]: COMMAND GetElementText {
+   "id": "0.38509875815403727-1"
+}
+[1527671952.511][INFO]: Waiting for pending navigations...
+[1527671952.513][INFO]: Done waiting for pending navigations. Status: ok
+[1527671952.527][INFO]: Waiting for pending navigations...
+[1527671952.528][INFO]: Done waiting for pending navigations. Status: ok
+[1527671952.528][INFO]: RESPONSE GetElementText ""
+[1527671952.535][INFO]: COMMAND Navigate {
+   "url": "http://the-internet.herokuapp.com/basic_auth"
+}
+[1527671952.535][INFO]: Waiting for pending navigations...
+[1527671952.536][INFO]: Done waiting for pending navigations. Status: ok
+[1527672252.535][SEVERE]: Timed out receiving message from renderer: 299.995
+[1527672252.535][INFO]: Waiting for pending navigations...
+[1527672252.536][SEVERE]: Timed out receiving message from renderer: -0.001
+[1527672252.536][INFO]: Timed out. Stopping navigation...
+[1527672252.540][SEVERE]: Timed out receiving message from renderer: -0.005
+[1527672252.540][INFO]: Done waiting for pending navigations. Status: timeout
+[1527672252.540][INFO]: RESPONSE Navigate timeout
+  (Session info: chrome=66.0.3359.181)
+[1527672257.585][INFO]: COMMAND CloseWindow {
+
+}
+[1527672257.689][INFO]: RESPONSE CloseWindow

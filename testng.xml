@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="softwaretestingmaterial">
+	<parameter name="driverPath" value="/Users/qa/eclipse-workspace/mavenProject/src/test/resources/"/>
+	<parameter name="enableLog" value="true"/>
+	<parameter name="username" value="rzheng2018@gmail.com"/>
+	<parameter name="password" value="fx040506"/>
+	<parameter name="baseURL" value="http://the-internet.herokuapp.com/"/>
+
+	 <test name="testnFirstTest" preserve-order="true">
+		 <parameter name="browserType" value="firefox"/>
+			 <classes>
+			 	<class name="test.firstTest" />
+			 </classes>
+	 </test>
+	 
+	 <!-- 
+	 <test name="2nd batch test">
+	 	
+	 	<parameter name="browserType" value="chrome"/>
+	 		<classes>
+	 			<class name= "test.rsTest" />
+	 		</classes>
+	 </test>
+	 -->
+	
+</suite>

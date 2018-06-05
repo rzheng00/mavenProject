@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [softwaretestingmaterial]">
+  <parameter name="password" value="fx040506"/>
+  <parameter name="baseURL" value="http://the-internet.herokuapp.com/"/>
+  <parameter name="driverPath" value="/Users/qa/eclipse-workspace/mavenProject/src/test/resources/"/>
+  <parameter name="enableLog" value="true"/>
+  <parameter name="username" value="rzheng2018@gmail.com"/>
+  <parameter name="browserType" value="firefox"/>
+  <test name="testnFirstTest">
+    <parameter name="browserType" value="firefox"/>
+    <classes>
+      <class name="test.firstTest"/>
+    </classes>
+  </test> <!-- testnFirstTest -->
+</suite> <!-- Failed suite [softwaretestingmaterial] -->
