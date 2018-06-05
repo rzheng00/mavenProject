@@ -17,7 +17,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.sikuli.script.Screen;
 import org.sikuli.script.ImagePath;
-import org.sikuli.script.Pattern;
+//import org.sikuli.script.Pattern;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
