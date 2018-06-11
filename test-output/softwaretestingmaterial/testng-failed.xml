@@ -13,4 +13,18 @@
       <class name="test.firstTest"/>
     </classes>
   </test> <!-- testnFirstTest -->
+  <test name="testnFirstTest(failed)">
+    <parameter name="browserType" value="firefox"/>
+    <classes>
+      <class name="test.firstTest">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="hitGmailLink"/>
+          <include name="openGoogleHomepage"/>
+          <include name="loggingIn"/>
+          <include name="loggingIn"/>
+        </methods>
+      </class> <!-- test.firstTest -->
+    </classes>
+  </test> <!-- testnFirstTest(failed) -->
 </suite> <!-- Failed suite [softwaretestingmaterial] -->

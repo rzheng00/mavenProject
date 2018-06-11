@@ -1,5 +1,7 @@
 package test;
 
+import io.restassured.path.json.JsonPath;
+import io.restassured.specification.AuthenticationSpecification;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -14,6 +16,8 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 import io.restassured.RestAssured;
+import org.testng.asserts.SoftAssert;
+
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
@@ -26,7 +30,7 @@ import java.util.HashMap;
 
 public class rsTest {
   //RequestSpecification httpRequest;
-  @Test (enabled=false)
+  @Test (enabled=false,groups = {"test1"})
   public void Validate_default_page_index_and_iterate_pages() {
 	  int total_pages=0;
 	//Verify the default page index   
@@ -58,7 +62,7 @@ public class rsTest {
 	  }
   }
   
-  @Test
+  @Test (enabled = false)
   public void Find_given_user_within_response() {
 	  Response rs= given().
 	  	contentType(ContentType.JSON).
@@ -82,14 +86,39 @@ public class rsTest {
 	  
 	  System.out.println("first names: " + rs.jsonPath().getString("data.id"));
 	  System.out.println("first names: " + rs.path("data.first_name"));
-	  System.out.println("total: " + rs.path("total")); 
-
-	  	
-	  	
+	  System.out.println("total: " + rs.path("total"));
 	  
 	  
   }
-  
+
+  @Test (enabled=false)
+  public void Access_my_GC_settings_with_accessToken(){
+  		String token = "Bearer ya29.GlvTBaiF3cZ1aMAofUz1edCDVpF_PxJ_a_lVYkdA0xyRk79R1eWJjAnqdYcve0Nn_EWdcgzT68ticoKaNEmsy7U2iG6QFXWT_6n4svKkDOXynYpbwAeDAZOdix3N";
+  		Response rs =
+				given().
+						header("Authorization", token).
+				when().
+						get("https://www.googleapis.com/calendar/v3/users/me/settings").
+				then().
+						statusCode(200).and().
+						assertThat().log().ifValidationFails().
+	  					body(containsString("calendar#setting")).
+						//body("items[2].value",equalTo("false")).
+						log().all().and().extract().response();
+  		System.out.println("here the is response:\n" + rs.getHeaders().toString());
+  		System.out.println("ids are: " +rs.path("items.kind").toString());
+  		System.out.println("kinds are: " +rs.jsonPath().getString("kind"));
+
+  		SoftAssert sa = new SoftAssert();
+  		sa.assertEquals(rs.path("items.kind"), "60", "expected 60");
+  		System.out.println("test 1");
+  		sa.assertTrue(rs.jsonPath().getString("items.id").contains("dateFieldOrder1"), "no match found here");
+  		System.out.println("test 2");
+  		sa.assertAll();
+
+  		System.out.println("done here");
+	}
+
 	
   @Test(enabled=false)
   @Parameters ("UserName")
@@ -131,6 +160,7 @@ public class rsTest {
 	  //RestAssured.given().when().get("http://www.google.com").then().statusCode(200).toString();
 	  //System.out.println(RestAssured.given().when().get("http://www.google.com").then().statusCode(200).toString());
   }
+
   @BeforeTest
   public void beforeTest() {
 	  String port = System.getProperty("server.port");

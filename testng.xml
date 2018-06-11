@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="softwaretestingmaterial">
-	<parameter name="driverPath" value="/Users/qa/eclipse-workspace/mavenProject/src/test/resources/"/>
+	<parameter name="driverPath" value="/Users/qa/mavenProject/src/test/resources/"/>
 	<parameter name="enableLog" value="true"/>
 	<parameter name="username" value="rzheng2018@gmail.com"/>
 	<parameter name="password" value="fx040506"/>
 	<parameter name="baseURL" value="http://the-internet.herokuapp.com/"/>
-
+	 <!--
 	 <test name="testnFirstTest" preserve-order="true">
 		 <parameter name="browserType" value="firefox"/>
 			 <classes>
@@ -14,7 +14,7 @@
 			 </classes>
 	 </test>
 	 
-	 <!--
+
 	 <test name="2nd batch test">
 	 	test
 	 	<parameter name="browserType" value="chrome"/>
@@ -22,6 +22,24 @@
 	 			<class name= "test.rsTest" />
 	 		</classes>
 	 </test>
-	 -->
+
+
+	<test name="popUps" preserve-order= "true">
+		<parameter name="browserType" value="chrome"/>
+		<parameter name="url" value="https://www.httpwatch.com/httpgallery/authentication/"/>
+        <!-<parameter name="url" value="http://www.google.com"/>
+        <classes>
+			<class name="test.popUps" />
+		</classes>
+	</test>
+-->
+	<test name="pageFactorySampe">
+		<parameter name="browserType" value="chrome"/>
+		<parameter name="url" value="https://www.kimschiller.com/page-object-pattern-tutorial/"/>
+		<classes>
+				<class name="test.checklogin"/>
+		</classes>
+
+	</test>
 	
 </suite>
