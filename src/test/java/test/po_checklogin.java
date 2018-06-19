@@ -19,11 +19,14 @@ import java.util.Map;
 
 //import org.assertj.core.*;
 
-public class checklogin extends po_testcase_base{
+public class po_checklogin extends po_testcase_base{
     WebDriver driver;
+    public po_checklogin(){
+        this.driver=super.driver;
+    }
 
     @Test
-    @Parameters("url")
+    @Parameters({"url"})
     public void signUpChecking(String url){
         driver.get(url);
         signUpPage s = new signUpPage(driver);
@@ -41,7 +44,19 @@ public class checklogin extends po_testcase_base{
 
     }
 
+    @BeforeTest
+    @Parameters({"driverPath","browserType"})
+    public void BeforeTest(String driverPath, String browserType){
+        super.BeforeTest(driverPath, browserType);
+        this.driver=super.driver;
+    }
 
+    @AfterTest
+    public void AfterTest(){
+        super.AfterTest();
+    }
+
+/*
     @BeforeTest
     @Parameters({"driverPath","browserType"})
     public void BeforeTest(String driverPath, String browserType){
@@ -78,4 +93,5 @@ public class checklogin extends po_testcase_base{
         System.out.println("-------------Test Coomplete-----------");
         driver.quit();
     }
+    */
 }

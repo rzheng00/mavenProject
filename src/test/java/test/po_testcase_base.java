@@ -23,7 +23,7 @@ public class po_testcase_base {
         } else {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("incognito");
-            options.addArguments("--headless");
+            //options.addArguments("--headless");
 
             Map<String, Object> prefs = new HashMap<String,Object>();
             prefs.put("credentials_enable_service", false);

@@ -21,25 +21,26 @@
 	 		<classes>
 	 			<class name= "test.rsTest" />
 	 		</classes>
-	 </test>
+	 </test>-->
 
 
 	<test name="popUps" preserve-order= "true">
 		<parameter name="browserType" value="chrome"/>
 		<parameter name="url" value="https://www.httpwatch.com/httpgallery/authentication/"/>
-        <!-<parameter name="url" value="http://www.google.com"/>
+        <!--<parameter name="url" value="http://www.google.com"/>-->
         <classes>
 			<class name="test.popUps" />
 		</classes>
 	</test>
--->
+	<!--
 	<test name="pageFactorySampe">
 		<parameter name="browserType" value="chrome"/>
 		<parameter name="url" value="https://www.kimschiller.com/page-object-pattern-tutorial/"/>
 		<classes>
-				<class name="test.checklogin"/>
+				<class name="test.po_checklogin"/>
 		</classes>
 
 	</test>
+	-->
 	
 </suite>

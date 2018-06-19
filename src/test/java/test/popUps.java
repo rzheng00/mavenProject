@@ -17,10 +17,14 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import org.sikuli.script.*;
+import test.util.ScreenShot;
+
 //import org.openqa.selenium.support.ui.WebDriverWait;
 //import org.testng.asserts.SoftAssert;
 
 
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.io.File;
 import java.util.Map;
 import java.util.HashMap;
@@ -36,6 +40,9 @@ public class popUps {
     @Test (priority=0, enabled=true)
     @Parameters ("url")
     public void gotoPage(String url){
+
+        //url="ttps://www.httpwatch.com/httpgallery/authentication/"
+
         SoftAssertions sa = new SoftAssertions();
         driver.get(url);
         sa.assertThat(driver.getTitle()).isEqualTo("HTTP Authentication | HttpWatch");
@@ -54,7 +61,41 @@ public class popUps {
         System.out.println("S message is "+s);
         //sa.assertAll();
         Assert.assertEquals(true,true);
-        System.out.println("done with a test");
+        System.out.println("done with test Part 1");
+
+        //Sikuli
+        Screen screen = new Screen();
+        Pattern username = new Pattern("/Users/qa/mavenProject/src/test/resources/elements/username.png");
+        Pattern password = new Pattern ("/Users/qa/mavenProject/src/test/resources/elements/password.png");
+        Pattern signin = new Pattern("/Users/qa/mavenProject/src/test/resources/elements/signin.png");
+        Pattern cancel = new Pattern("/Users/qa/mavenProject/src/test/resources/elements/cancel.png");
+
+        System.out.println(ImagePath.getBundlePath());
+        driver.findElement(By.id("displayImage")).click();
+
+
+
+        try {
+            Thread.sleep(1000);
+            screen.wait(username, 10);
+            //invalid usernmae
+            screen.type(username,"xyz");
+            screen.type(password, "testts");
+            screen.click(signin);
+            Thread.sleep(500);
+            sa.assertThat(screen.exists(username)).isNull();
+            //valid username
+            screen.type(username,"httpwatch");
+            screen.type(password, "testts");
+            screen.click(signin);
+            Thread.sleep(500);
+            sa.assertThat(screen.exists(username)).isNotNull();
+            sa.assertAll();
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
+
 
     }
 
@@ -145,7 +186,7 @@ public class popUps {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("incognito");
             //add for running in Jenkin as background
-            options.addArguments("--headless");
+            //options.addArguments("--headless");
 
             Map<String, Object> prefs = new HashMap<String, Object>();
             prefs.put("credentials_enable_service", false);
